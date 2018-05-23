@@ -1,0 +1,20 @@
+<p-dataTable [value]="books" selectionMode="single" [(selection)]="selectedBook" (onRowSelect)="onRowSelect($event)"
+             [paginator]="true" [rows]="10" [responsive]="true">
+    <p-header>CRUD for Books</p-header>
+    <p-column field="id" header="ID Book" [sortable]="true"></p-column>
+    <p-column field="name" header="Book Title" [sortable]="true"></p-column>
+    <p-column field="genreId" header="ID Genre" [sortable]="true"></p-column>
+    <p-column field="genre.name" header="Genre Title" [sortable]="true"></p-column>
+    <p-footer>
+        <div class="ui-helper-clearfix" style="width:100%">
+            <button type="button" pButton icon="fa-plus" style="float:left" (click)="showDialogToAdd()"
+                    label="Add"></button>
+        </div>
+    </p-footer>
+</p-dataTable>
+<app-dialogbook [(displayDialog)]="displayDialog" [(book)]="book" (deleteEvent)="delete()" (updateEvent)="update()"
+                (cancelEvent)="cancel()"></app-dialogbook>
+<app-dialogaddbook [(displayDialogAdd)]="displayDialogAdd" [(book)]="book" (cancelEvent)="cancel()"
+                   (createEvent)="create()"></app-dialogaddbook>
+
+

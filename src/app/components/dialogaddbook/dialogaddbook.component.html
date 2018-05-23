@@ -1,0 +1,20 @@
+<p-dialog header="Add New Book" [(visible)]="displayDialogAdd" [responsive]="true" [modal]="true"
+          (onHide)="onHideDialog()">
+    <div class="ui-grid ui-grid-responsive ui-fluid ui-grid-pad" *ngIf="book, genre">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="name">Name</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="book.name"/></div>
+        </div>
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="genreId">GenreId</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="genreId" [(ngModel)]="book.genreId"/></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" (click)="cancel()" label="Cancel"></button>
+            <button type="button" pButton icon="fa-check" (click)="create()" label="Create"
+                    class="ui-button-success"></button>
+        </div>
+    </p-footer>
+</p-dialog>

@@ -1,0 +1,17 @@
+<p-dialog header="Edit Genre" [(visible)]="displayDialog" [responsive]="true" [modal]="true" (onHide)="onHideDialog()">
+    <div class="ui-grid ui-grid-responsive ui-fluid ui-grid-pad" *ngIf="genre">
+        <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="name">Name</label></div>
+            <div class="ui-grid-col-8"><input pInputText id="name" [(ngModel)]="genre.name"/></div>
+        </div>
+    </div>
+    <p-footer>
+        <div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix">
+            <button type="button" pButton icon="fa-close" (click)="delete()" label="Delete"
+                    class="ui-button-danger"></button>
+            <button type="button" pButton icon="fa-close" (click)="cancel()" label="Cancel"></button>
+            <button type="button" pButton icon="fa-check" (click)="update()" label="Update"
+                    class="ui-button-success"></button>
+        </div>
+    </p-footer>
+</p-dialog>
