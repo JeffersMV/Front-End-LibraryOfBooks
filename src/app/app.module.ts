@@ -16,7 +16,6 @@ import {AppComponent} from './app.component';
 import {BooksComponent} from './components/books/books.component';
 import {GenresComponent} from './components/genres/genres.component';
 import {MenuComponent} from './components/menu/menu.component';
-import {DataProviderSabService} from "./services/dataprovider.stab.service";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 import {DialoggenreComponent} from './components/dialoggenre/dialoggenre.component';
@@ -51,7 +50,7 @@ import {DialogaddgenreComponent} from './components/dialogaddgenre/dialogaddgenr
         AppRoutingModule,
         HttpClientModule
     ],
-    providers: [DataProviderSabService, DataProviderService],
+    providers: [DataProviderService],
     bootstrap: [AppComponent]
 })
 export class AppModule {
